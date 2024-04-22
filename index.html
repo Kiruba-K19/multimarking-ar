@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified WebAR Marker Detection</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="js/three.js"></script>
+    <script src="jsartoolkit5/artoolkit.min.js"></script>
+    <script src="jsartoolkit5/artoolkit.api.js"></script>
+    <script src="threex/threex-artoolkitsource.js"></script>
+    <script src="threex/threex-artoolkitcontext.js"></script>
+    <script src="threex/threex-arbasecontrols.js"></script>
+    <script src="threex/threex-armarkercontrols.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Marker Hiro -->
+        <a-marker type="pattern" url="assets/marker.patt" id="marker_hiro">
+            <!-- Video element -->
+            <a-video id="video1" src="#vid" width="9" height="16" position="0 0 0" rotation="-90 0 0" scale="0.25 0.25 0.25" visible="true" gesture-handler></a-video>
+        </a-marker>
+
+        <!-- Marker A -->
+        <a-marker type="pattern" url="assets/marker_A.patt" id="marker_A">
+            <!-- Video element -->
+            <a-video id="video2" src="#A-video" width="16" height="16" position="0 0 0" rotation="-90 0 0" scale="0.25 0.25 0.25" visible="true" gesture-handler></a-video>
+        </a-marker>
+
+        <!-- Marker B -->
+        <a-marker type="pattern" url="assets/marker_B.patt" id="marker_B">
+            <!-- Video element -->
+            <a-video id="video3" src="#B-video" width="16" height="16" position="0 0 0" rotation="-90 0 0" scale="0.25 0.25 0.25" visible="true" gesture-handler></a-video>
+        </a-marker>
+
+        <!-- Marker C -->
+        <a-marker type="pattern" url="assets/marker_C.patt" id="marker_C">
+            <!-- Video element -->
+            <a-video id="video4" src="#C-video" width="16" height="16" position="0 0 0" rotation="-90 0 0" scale="0.25 0.25 0.25" visible="true" gesture-handler></a-video>
+        </a-marker>
+
+        <!-- Camera Entity -->
+        <a-entity camera></a-entity>
+
+        <!-- Video Assets -->
+        <a-assets>
+            <video id="vid" autoplay loop crossorigin="anonymous" playsinline>
+                <source src="assets/asset.mp4" type="video/mp4">
+            </video>
+            <video id="A-video" autoplay loop crossorigin="anonymous" playsinline>
+                <source src="./videos/APAR_A.mp4" type="video/mp4">
+            </video>
+            <video id="B-video" autoplay loop crossorigin="anonymous" playsinline>
+                <source src="./videos/APAR_B.mp4" type="video/mp4">
+            </video>
+            <video id="C-video" autoplay loop crossorigin="anonymous" playsinline>
+                <source src="./videos/APAR_C.mp4" type="video/mp4">
+            </video>
+        </a-assets>
+    </a-scene>
+
+    <script>
+        // Marker detection for Hiro
+        marker_hiro.addEventListener('markerFound', function () {
+            var video1 = document.querySelector('#video1');
+            video1.components.material.material.map.image.play();
+        });
+
+        marker_hiro.addEventListener('markerLost', function () {
+            var video1 = document.querySelector('#video1');
+            video1.components.material.material.map.image.currentTime = 0;
+        });
+
+        // Marker detection for A
+        marker_A.addEventListener('markerFound', function () {
+            var video2 = document.querySelector('#video2');
+            video2.components.material.material.map.image.play();
+        });
+
+        marker_A.addEventListener('markerLost', function () {
+            var video2 = document.querySelector('#video2');
+            video2.components.material.material.map.image.currentTime = 0;
+        });
+
+        // Marker detection for B
+        marker_B.addEventListener('markerFound', function () {
+            var video3 = document.querySelector('#video3');
+            video3.components.material.material
+.map.image.play();
+});
+
+javascript
+Copy code
+    marker_B.addEventListener('markerLost', function () {
+        var video3 = document.querySelector('#video3');
+        video3.components.material.material.map.image.currentTime = 0;
+    });
+
+    // Marker detection for C
+    marker_C.addEventListener('markerFound', function () {
+        var video4 = document.querySelector('#video4');
+        video4.components.material.material.map.image.play();
+    });
+
+    marker_C.addEventListener('markerLost', function () {
+        var video4 = document.querySelector('#video4');
+        video4.components.material.material.map.image.currentTime = 0;
+    });
+</script>
+</body>
+</html>
