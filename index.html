@@ -17,25 +17,25 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
         <!-- Marker Hiro -->
-        <a-marker type="pattern" url="assets/marker.patt" id="marker_hiro">
+        <a-marker type="pattern" url="marker1.patt" id="marker_hiro">
             <!-- Video element -->
             <a-video id="video1" src="#vid" width="9" height="16" position="0 0 0" rotation="-90 0 0" scale="0.25 0.25 0.25" visible="true" gesture-handler></a-video>
         </a-marker>
 
         <!-- Marker A -->
-        <a-marker type="pattern" url="assets/marker_A.patt" id="marker_A">
+        <a-marker type="pattern" url="marker2.patt" id="marker_A">
             <!-- Video element -->
             <a-video id="video2" src="#A-video" width="16" height="16" position="0 0 0" rotation="-90 0 0" scale="0.25 0.25 0.25" visible="true" gesture-handler></a-video>
         </a-marker>
 
         <!-- Marker B -->
-        <a-marker type="pattern" url="assets/marker_B.patt" id="marker_B">
+        <a-marker type="pattern" url="marker3.patt" id="marker_B">
             <!-- Video element -->
             <a-video id="video3" src="#B-video" width="16" height="16" position="0 0 0" rotation="-90 0 0" scale="0.25 0.25 0.25" visible="true" gesture-handler></a-video>
         </a-marker>
 
         <!-- Marker C -->
-        <a-marker type="pattern" url="assets/marker_C.patt" id="marker_C">
+        <a-marker type="pattern" url="marker4.patt" id="marker_C">
             <!-- Video element -->
             <a-video id="video4" src="#C-video" width="16" height="16" position="0 0 0" rotation="-90 0 0" scale="0.25 0.25 0.25" visible="true" gesture-handler></a-video>
         </a-marker>
@@ -46,16 +46,16 @@
         <!-- Video Assets -->
         <a-assets>
             <video id="vid" autoplay loop crossorigin="anonymous" playsinline>
-                <source src="assets/asset.mp4" type="video/mp4">
+                <source src="video1.mp4" type="video/mp4">
             </video>
             <video id="A-video" autoplay loop crossorigin="anonymous" playsinline>
-                <source src="./videos/APAR_A.mp4" type="video/mp4">
+                <source src="video2.mp4" type="video/mp4">
             </video>
             <video id="B-video" autoplay loop crossorigin="anonymous" playsinline>
-                <source src="./videos/APAR_B.mp4" type="video/mp4">
+                <source src="video3.mp4" type="video/mp4">
             </video>
             <video id="C-video" autoplay loop crossorigin="anonymous" playsinline>
-                <source src="./videos/APAR_C.mp4" type="video/mp4">
+                <source src="video4.mp4" type="video/mp4">
             </video>
         </a-assets>
     </a-scene>
